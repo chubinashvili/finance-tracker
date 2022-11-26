@@ -3,13 +3,14 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAUnyas4iedVn78MAgSAwCejOMObkedOAA",
-    authDomain: "db-mymoney.firebaseapp.com",
-    projectId: "db-mymoney",
-    storageBucket: "db-mymoney.appspot.com",
-    messagingSenderId: "540412801516",
-    appId: "1:540412801516:web:bf7ea494204e130151d0c9"
-  };
+  apiKey: "AIzaSyAlOQhuCE4luldHzXy3egiEGaFKEChJ8vg",
+  authDomain: "mymoney-site-db.firebaseapp.com",
+  projectId: "mymoney-site-db",
+  storageBucket: "mymoney-site-db.appspot.com",
+  messagingSenderId: "331520882418",
+  appId: "1:331520882418:web:f77e76dff484cd686e026b"
+};
+
   
 
 // init firebase
