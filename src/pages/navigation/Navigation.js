@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { useAuthContext } from '../../hooks/UseAuthContext';
+import { useAuthContext } from '../../hooks/useAuthContext';
 import { useLogout } from '../../hooks/useLogout';
 
 // styles

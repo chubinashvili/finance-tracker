@@ -1,4 +1,4 @@
-import { useAuthContext } from '../../hooks/UseAuthContext';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 // styles
 import styles from './Home.module.css';
