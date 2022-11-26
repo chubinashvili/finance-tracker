@@ -10,8 +10,14 @@ let initialState = {
 
 const firestoreReducer = (state, { type, payload }) => {
     switch (type) {
+        case 'IS_PENDING':
+            return { isPending: true, document: null, success: false, error: null };
+        case 'ADDED_DOCUMENT':
+            return { isPending: false, document: payload, success: true, error: null }; 
+        case 'ERROR': 
+            return { isPending: false, document: null, success: false, error: payload };
         default: 
-            return state;
+            return state;   
     }
 }
 
@@ -22,13 +28,28 @@ export const useFirestore = (collection) => {
     // collction ref
     const ref = projectFirestore.collection(collection);
 
-    // add a document
-    const addDocument = (doc) => {
+    // only dispatch if not cancelled
+    const dispatchIfNotCancelled = (action) => { 
+        if (!isCancelled) {
+            dispatch(action)
+        }
+    }
 
+    // add a document
+    const addDocument = async (doc) => {
+        dispatch({ type: 'IS_PENDING'});
+
+        try {
+            const addedDocument = await ref.add(doc);
+            dispatchIfNotCancelled({ type: 'ADDED_DOCUMENT', payload: addedDocument });
+            
+        } catch (err) {
+            dispatchIfNotCancelled({ type: 'ERROR', payload: err.message });
+        }
     }
 
     // delete a document
-    const deleteDocument = (id) => {
+    const deleteDocument = async (id) => {
 
     }
 
