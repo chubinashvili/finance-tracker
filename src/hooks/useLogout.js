@@ -25,5 +25,5 @@ export const useLogout = () => {
         setIsPending(false);
     }
 
-    return { useLogout, error, isPending };
+    return { logout, error, isPending };
 }
