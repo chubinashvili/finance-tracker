@@ -13,7 +13,7 @@ const Navigation = () => {
     <Fragment>
       <nav className={styles.navbar}>
           <ul>
-              <li className={styles.title}>myMoney</li>
+              <li className={styles.title}>Track Every Dollar</li>
 
             {user ? (
               <Fragment>
