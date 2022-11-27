@@ -3,15 +3,13 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAlOQhuCE4luldHzXy3egiEGaFKEChJ8vg",
-  authDomain: "mymoney-site-db.firebaseapp.com",
-  projectId: "mymoney-site-db",
-  storageBucket: "mymoney-site-db.appspot.com",
-  messagingSenderId: "331520882418",
-  appId: "1:331520882418:web:f77e76dff484cd686e026b"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
-
-  
 
 // init firebase
 firebase.initializeApp(firebaseConfig);
